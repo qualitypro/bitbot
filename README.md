@@ -34,15 +34,19 @@ BitBot is a fully modular trading system designed for:
 ---
 
 ## 🧩 Architecture
+
+```text
 bitbot/
-├── core/ # Trading engine, portfolio, risk
-├── exchange/ # CCXT exchange integration
-├── strategy/ # Trading strategies
-├── services/ # Telegram + logging
-├── utils/ # Indicators, helpers, time
-├── data/ # Trade logging
-├── config/ # Config loader
-├── main.py # Entry point
+├── core/        # Trading engine, portfolio, risk management
+├── exchange/    # CCXT exchange integration layer
+├── strategy/    # Trading strategies
+├── services/    # Telegram integration and logging
+├── utils/       # Indicators, helpers, time utilities
+├── data/        # Trade logging and data handling
+├── config/      # Configuration loader
+└── main.py      # Entry point
+```
+
 ---
 
 ## ⚙️ Installation
