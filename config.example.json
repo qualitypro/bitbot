@@ -1,0 +1,32 @@
+{
+  "exchange_id": "bitmart",
+  "pair": "SOL/USDT",
+
+  "enable_initial_trade": false,
+  "trade_amount_usdt": 10,
+  "reserve_asset": 0,
+
+  "trade_interval_seconds": 90,
+  "max_trades_per_day": 200,
+
+  "tp_multiplier": 1.015,
+  "sl_multiplier": 0.992,
+  "trade_portion": 0.33,
+
+  "balance_cache_ttl_seconds": 60,
+  "trade_log": "trade_log.csv",
+
+  "telegram_enabled": true,
+
+  "volatility_window_minutes": 60,
+  "volatility_threshold": 0.0015,
+
+  "config_reload_interval_seconds": 3600,
+  "rebase_on_config_reload": false,
+
+  "prediction_mode": "predictive",
+
+  "min_notional_usdt": 5,
+
+  "features_file": "features.md"
+}
