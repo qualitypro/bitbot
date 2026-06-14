@@ -49,32 +49,57 @@ bitbot/
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation & Quick Start
 
-### 1. Clone the repo
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/qualitypro/bitbot.git
 cd bitbot
-2. Install dependencies
-pip install ccxt requests numpy python-dotenv
-3. Configure environment
+2. Run BitBot (One Command) 🚀
 
-Create your config and environment files:
+BitBot includes a helper script that automatically:
 
-cp config.example.json config.json
-cp env.example .env
+Creates a virtual environment
+Installs dependencies
+Generates config.json (if missing)
+Generates .env (if missing)
+Launches the bot
+./run.sh
+⚠️ First-Time Setup Required
 
-Edit .env:
+On first run, the script will create:
 
-BITMART_API_KEY=your_key
-BITMART_API_SECRET=your_secret
-BITMART_API_MEMO=your_memo
+config.json from config.example.json
+.env from env.example
 
-TELEGRAM_BOT_TOKEN=your_token
+You must edit .env before running again:
+
+nano .env
+
+Add your credentials:
+
+BITMART_API_KEY=your_api_key
+BITMART_API_SECRET=your_api_secret
+BITMART_API_MEMO=your_api_memo
+
+TELEGRAM_BOT_TOKEN=your_telegram_token
 TELEGRAM_CHAT_ID=your_chat_id
-▶️ Running the Bot
+
+After saving, run again:
+
+./run.sh
+▶️ Manual Run (Optional)
+
+If you prefer to run without the script:
+
 python main.py
+🧪 Manual Setup (Advanced)
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python main.py
+
 💬 Telegram Commands
 Command	Description
 /pause	⏸ Pause trading
