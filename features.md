@@ -81,13 +81,18 @@
 ---
 
 ## 🧩 System Architecture
+
+```text
 bitbot/
-├── core/ # Trading engine, portfolio, risk
-├── exchange/ # CCXT integration layer
-├── strategy/ # Pluggable trading strategies
-├── services/ # Telegram + logging
-├── utils/ # Indicators, helpers, time
-└── data/ # Trade logging
+├── core/        # Trading engine, portfolio, risk management
+├── exchange/    # CCXT exchange integration layer
+├── strategy/    # Trading strategies
+├── services/    # Telegram integration and logging
+├── utils/       # Indicators, helpers, time utilities
+├── data/        # Trade logging and data handling
+├── config/      # Configuration loader
+└── main.py      # Entry point
+```
 
 - 🧵 **Threaded Design** – Trading + Telegram in parallel
 - 🎯 **Auto Precision Detection** – From exchange metadata
