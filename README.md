@@ -174,11 +174,11 @@ To switch exchanges, update the exchange configuration in the `exchange/` layer 
 
 ---
 
-## 🖥️ Environment Requirements
+🖥️ Environment Requirements
 
 BitBot is designed to run in a lightweight Python environment with minimal dependencies.
 
-### 🧾 Supported Environment
+🧾 Supported Environment
 
 * **Operating System**:
 
@@ -196,7 +196,7 @@ BitBot is designed to run in a lightweight Python environment with minimal depen
 
 ---
 
-### 📦 Core Dependencies
+📦 Core Dependencies
 
 Installed via `requirements.txt`:
 
@@ -207,7 +207,7 @@ Installed via `requirements.txt`:
 
 ---
 
-### ⚙️ System Requirements
+⚙️ System Requirements
 
 * Internet connection (required for exchange APIs)
 * Valid API credentials for supported exchange
@@ -218,7 +218,7 @@ Installed via `requirements.txt`:
 
 ---
 
-### 🚀 Recommended Setup
+🚀 Recommended Setup
 
 * Linux-based environment (Fedora/Ubuntu)
 * Virtual environment (`venv`)
@@ -227,7 +227,7 @@ Installed via `requirements.txt`:
 
 ---
 
-## ⚠️ Exchange Disclaimer
+⚠️ Exchange Disclaimer
 
 This project is built for flexibility, but:
 
