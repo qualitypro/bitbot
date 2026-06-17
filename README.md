@@ -66,6 +66,7 @@ Generates config.json (if missing)
 Generates .env (if missing)
 Launches the bot
 ./run.sh
+
 ⚠️ First-Time Setup Required
 
 On first run, the script will create:
@@ -89,18 +90,22 @@ TELEGRAM_CHAT_ID=your_chat_id
 After saving, run again:
 
 ./run.sh
+
 ▶️ Manual Run (Optional)
 
 If you prefer to run without the script:
 
 python main.py
+
 🧪 Manual Setup (Advanced)
+
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python main.py
 
 💬 Telegram Commands
+
 Command	Description
 /pause	⏸ Pause trading
 /resume	▶️ Resume trading
@@ -114,17 +119,22 @@ Command	Description
 /quote SYMBOL	📡 Market data
 /lottery	🎯 Utility feature
 /help	❓ Help menu
+
 🔐 Security
+
 🔒 API keys stored in .env (never commit secrets)
 🧾 config.example.json provided for safe templates
 🚫 .gitignore protects sensitive files
+
 📊 Example Output
+
 🔗 Trading Pair: SOL/USDT
 💰 Balances: 0.000000 SOL | 0.024555 USDT
 📈 Price: 67.376600
 📊 Volatility: 0.000473 | Prediction: hold
 🔒 TP: 68.419600 | ⚠️ SL: 66.806000
 ⏱ Uptime: 0:00:03
+
 🧠 Strategy
 
 Default strategy:
@@ -138,12 +148,93 @@ Predictive mode optional via config
 Run syntax check:
 
 python -m py_compile $(find . -name "*.py")
+
 🚀 Roadmap
  Multi-pair trading
  Trailing TP/SL
  Backtesting module
  Strategy marketplace
  Web dashboard
+
+## 🔌 Exchange Support
+
+BitBot is currently **developed and tested using the BitMart exchange** via the CCXT library.
+
+Due to its modular architecture and use of CCXT, the bot can be **easily adapted to any supported exchange**, including:
+
+* Binance
+* Coinbase
+* Kraken
+* KuCoin
+* and other CCXT-compatible exchanges
+
+To switch exchanges, update the exchange configuration in the `exchange/` layer and ensure API credentials match the target platform.
+
+> ⚠️ Note: Each exchange has different trading rules (precision, minimum order size, rate limits). Adjust configuration accordingly.
+
+---
+
+## 🖥️ Environment Requirements
+
+BitBot is designed to run in a lightweight Python environment with minimal dependencies.
+
+### 🧾 Supported Environment
+
+* **Operating System**:
+
+  * Linux (tested on Fedora)
+  * macOS (should work)
+  * Windows (WSL recommended)
+
+* **Python Version**:
+
+  * Python **3.9+** (recommended: 3.10 or newer)
+
+* **Package Manager**:
+
+  * `pip` (included with Python)
+
+---
+
+### 📦 Core Dependencies
+
+Installed via `requirements.txt`:
+
+* `ccxt` — Exchange integration
+* `requests` — HTTP communication (Telegram, APIs)
+* `numpy` — Indicators and calculations
+* `python-dotenv` — Environment variable management
+
+---
+
+### ⚙️ System Requirements
+
+* Internet connection (required for exchange APIs)
+* Valid API credentials for supported exchange
+* Optional:
+
+  * Telegram Bot Token (for remote control)
+  * FFmpeg (for Gource visualization export)
+
+---
+
+### 🚀 Recommended Setup
+
+* Linux-based environment (Fedora/Ubuntu)
+* Virtual environment (`venv`)
+* Secure `.env` file for credentials
+* Low-latency network connection for trading
+
+---
+
+## ⚠️ Exchange Disclaimer
+
+This project is built for flexibility, but:
+
+* Exchange APIs differ in behavior and reliability
+* Market conditions vary across platforms
+* Always test with small amounts or paper trading before live use
+
 📄 License
 
 MIT License
