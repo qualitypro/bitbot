@@ -6,30 +6,30 @@
 
 ## 🚀 Overview
 
-BitBot is a fully modular trading system designed for:
+BitBot is a modular trading system designed for:
 
-- ⚙️ Clean architecture and maintainability  
-- 📈 Real-time market execution  
-- 🧠 Strategy flexibility (RSI/SMA + predictive logic)  
-- 🔒 Secure configuration using `.env`  
-- 💬 Remote control via Telegram  
+* ⚙️ Clean architecture and maintainability
+* 📈 Real-time market execution
+* 🧠 Strategy flexibility with RSI/SMA and predictive logic
+* 🔐 Secure configuration using `.env`
+* 💬 Remote control via Telegram
 
 ---
 
 ## ✨ Features
 
-- 🔁 Continuous trading loop with configurable intervals  
-- 🎯 Dynamic Take-Profit / Stop-Loss (TP/SL)  
-- 📊 Volatility-aware trade logic  
-- 🧠 RSI + SMA strategy engine  
-- 🔮 Predictive trading mode  
-- 🛡️ Risk management (reserve protection, trade limits)  
-- 💼 Portfolio tracking with drawdown monitoring  
-- 🧾 CSV trade logging  
-- 💬 Telegram command interface  
-- 🔄 Hot config reload  
+* 🔁 Continuous trading loop with configurable intervals
+* 🎯 Dynamic Take-Profit / Stop-Loss (TP/SL)
+* 📊 Volatility-aware trade logic
+* 🧠 RSI + SMA strategy engine
+* 🔮 Predictive trading mode
+* 🛡️ Risk management with reserve protection and trade limits
+* 💼 Portfolio tracking with drawdown monitoring
+* 🧾 CSV trade logging
+* 💬 Telegram command interface
+* 🔄 Hot config reload
 
-📋 Full feature list: see [`features.md`](features.md)
+Full feature list: see [`features.md`](features.md)
 
 ---
 
@@ -56,217 +56,225 @@ bitbot/
 ```bash
 git clone https://github.com/qualitypro/bitbot.git
 cd bitbot
-2. Run BitBot (One Command) 🚀
+```
+
+### 2. Run BitBot
 
 BitBot includes a helper script that automatically:
 
-Creates a virtual environment
-Installs dependencies
-Generates config.json (if missing)
-Generates .env (if missing)
-Launches the bot
-./run.sh
+* Creates a virtual environment
+* Installs dependencies
+* Generates `config.json` if missing
+* Generates `.env` if missing
+* Launches the bot
 
-⚠️ First-Time Setup Required
+```bash
+./run.sh
+```
+
+### 3. First-Time Setup
 
 On first run, the script will create:
 
-config.json from config.example.json
-.env from env.example
+* `config.json` from `config.example.json`
+* `.env` from `env.example`
 
-You must edit .env before running again:
+Edit `.env` before running the bot with real credentials:
 
+```bash
 nano .env
+```
 
-Add your credentials:
+Example `.env`:
 
+```env
 BITMART_API_KEY=your_api_key
 BITMART_API_SECRET=your_api_secret
 BITMART_API_MEMO=your_api_memo
 
 TELEGRAM_BOT_TOKEN=your_telegram_token
 TELEGRAM_CHAT_ID=your_chat_id
+```
 
 After saving, run again:
 
+```bash
 ./run.sh
+```
 
-▶️ Manual Run (Optional)
+---
 
-If you prefer to run without the script:
+## ▶️ Manual Run
 
+If you prefer to run without the helper script:
+
+```bash
 python main.py
+```
 
-🧪 Manual Setup (Advanced)
+---
 
+## 🧪 Manual Setup
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python main.py
+```
 
-💬 Telegram Commands
+---
 
-Command	Description
-/pause	⏸ Pause trading
-/resume	▶️ Resume trading
-/status	📊 Show live status
-/config	🧾 Show config
-/rebase	🔄 Reset TP/SL
-/set key value	⚙️ Update config
-/buy	🛒 Manual buy
-/sell	📉 Manual sell
-/portfolio	💼 Portfolio value
-/quote SYMBOL	📡 Market data
-/lottery	🎯 Utility feature
-/help	❓ Help menu
+## 💬 Telegram Commands
 
-🔐 Security
+| Command          | Description                 |
+| ---------------- | --------------------------- |
+| `/pause`         | ⏸ Pause trading             |
+| `/resume`        | ▶️ Resume trading           |
+| `/status`        | 📊 Show live status         |
+| `/config`        | 🧾 Show safe configuration  |
+| `/rebase`        | 🔄 Reset TP/SL              |
+| `/set key value` | ⚙️ Update config at runtime |
+| `/buy`           | 🛒 Manual buy               |
+| `/sell`          | 📉 Manual sell              |
+| `/portfolio`     | 💼 Show portfolio value     |
+| `/quote SYMBOL`  | 📡 Fetch market data        |
+| `/lottery`       | 🎯 Utility feature          |
+| `/help`          | ❓ Help menu                 |
 
-🔒 API keys stored in .env (never commit secrets)
-🧾 config.example.json provided for safe templates
-🚫 .gitignore protects sensitive files
+---
 
-📊 Example Output
+## 🔐 Security
 
+* API keys are stored in `.env`
+* `config.json` is ignored by Git
+* `config.example.json` is provided as a safe template
+* `.gitignore` protects local secrets and runtime files
+
+Never commit real exchange keys, Telegram tokens, or production configuration files.
+
+---
+
+## 📊 Example Output
+
+```text
 🔗 Trading Pair: SOL/USDT
 💰 Balances: 0.000000 SOL | 0.024555 USDT
 📈 Price: 67.376600
 📊 Volatility: 0.000473 | Prediction: hold
 🔒 TP: 68.419600 | ⚠️ SL: 66.806000
 ⏱ Uptime: 0:00:03
+```
 
-🧠 Strategy
+---
+
+## 🧠 Strategy
 
 Default strategy:
 
-RSI (14)
-SMA (20)
-Momentum crossover logic
-Predictive mode optional via config
-🛠️ Development
+* RSI period: `14`
+* SMA period: `20`
+* Momentum crossover logic
+* Predictive mode configurable via `config.json`
 
-Run syntax check:
-
-python -m py_compile $(find . -name "*.py")
-
-🚀 Roadmap
- Multi-pair trading
- Trailing TP/SL
- Backtesting module
- Strategy marketplace
- Web dashboard
+---
 
 ## 🔌 Exchange Support
 
-BitBot is currently **developed and tested using the BitMart exchange** via the CCXT library.
+BitBot is currently developed and tested using the **BitMart exchange** through CCXT.
 
-Due to its modular architecture and use of CCXT, the bot can be **easily adapted to any supported exchange**, including:
+Because the exchange layer is modular, BitBot can be adapted to other CCXT-supported centralized cryptocurrency exchanges, including:
 
 * Binance
 * Coinbase
 * Kraken
 * KuCoin
-* and other CCXT-compatible exchanges
+* Other CCXT-compatible crypto exchanges
 
-To switch exchanges, update the exchange configuration in the `exchange/` layer and ensure API credentials match the target platform.
-
-> ⚠️ Note: Each exchange has different trading rules (precision, minimum order size, rate limits). Adjust configuration accordingly.
+> Note: Each exchange has different trading rules, including precision, minimum order size, rate limits, authentication, and symbol formats. Always test carefully before live trading.
 
 ---
 
-🖥️ Environment Requirements
+## 🖥️ Environment Requirements
 
 BitBot is designed to run in a lightweight Python environment with minimal dependencies.
 
-🧾 Supported Environment
+### Supported Environment
 
-* **Operating System**:
+* **Operating System**
 
-  * Linux (tested on Fedora)
-  * macOS (should work)
-  * Windows (WSL recommended)
+  * Linux tested on Fedora
+  * macOS should work
+  * Windows via WSL recommended
 
-* **Python Version**:
+* **Python Version**
 
-  * Python **3.9+** (recommended: 3.10 or newer)
+  * Python 3.9+
+  * Python 3.10 or newer recommended
 
-* **Package Manager**:
+* **Package Manager**
 
-  * `pip` (included with Python)
+  * `pip`
 
----
-
-📦 Core Dependencies
+### Core Dependencies
 
 Installed via `requirements.txt`:
 
-* `ccxt` — Exchange integration
-* `requests` — HTTP communication (Telegram, APIs)
-* `numpy` — Indicators and calculations
-* `python-dotenv` — Environment variable management
+* `ccxt` — exchange integration
+* `requests` — HTTP communication
+* `numpy` — indicators and calculations
+* `python-dotenv` — environment variable management
+
+### System Requirements
+
+* Internet connection
+* Valid exchange API credentials
+* Optional Telegram bot token for remote control
 
 ---
 
-⚙️ System Requirements
+## 🛠️ Development
 
-* Internet connection (required for exchange APIs)
-* Valid API credentials for supported exchange
-* Optional:
+Run syntax checks:
 
-  * Telegram Bot Token (for remote control)
-  * FFmpeg (for Gource visualization export)
-
----
-
-🚀 Recommended Setup
-
-* Linux-based environment (Fedora/Ubuntu)
-* Virtual environment (`venv`)
-* Secure `.env` file for credentials
-* Low-latency network connection for trading
+```bash
+python -m py_compile $(find . -name "*.py")
+```
 
 ---
 
-⚠️ Exchange Disclaimer
+## 🗺️ Roadmap
 
-This project is built for flexibility, but:
+* [ ] Multi-pair trading
+* [ ] Trailing TP/SL
+* [ ] PostgreSQL trade logging
+* [ ] Dynamic web dashboard
+* [ ] Backtesting module
+* [ ] Strategy registry
+* [ ] Enterprise deployment profile
 
-* Exchange APIs differ in behavior and reliability
-* Market conditions vary across platforms
-* Always test with small amounts or paper trading before live use
+---
 
-📄 License
+## 📄 License
 
-MIT License
+MIT License. See [`LICENSE`](LICENSE).
 
-Copyright (c) 2026 qualitypro
+---
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 
 This software is for educational purposes only.
-Trading cryptocurrency involves risk. Use at your own discretion.
 
-👤 Author
+Cryptocurrency trading involves significant risk. Use at your own discretion. No financial advice is provided.
+
+---
+
+## 👤 Author
 
 Michael Dietz
-GitHub: https://github.com/qualitypro
+GitHub: [qualitypro](https://github.com/qualitypro)
+
+---
 
 💡 Built for adaptive, data-driven crypto trading.
+
